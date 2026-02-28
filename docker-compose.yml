@@ -1,0 +1,5 @@
+version: "3.8"
+services:
+  app:
+    image: alpine:3
+    command: ["sh", "-c", "echo 'placeholder app' && sleep 3600"]

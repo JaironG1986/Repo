@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Architecture/API gates
+        run: |
+          bash scripts/verify_arch_gate.sh
+          bash scripts/verify_api_gate.sh
+
+      - name: Lint (placeholder)
+        run: echo "Reemplaza esto por tu linter real (eslint/ruff/checkstyle/etc.)"
+
+      - name: Tests (placeholder)
+        run: echo "Reemplaza esto por tus tests reales (jest/pytest/junit/etc.)"
